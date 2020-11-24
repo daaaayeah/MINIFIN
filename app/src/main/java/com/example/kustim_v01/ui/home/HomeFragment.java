@@ -1,10 +1,12 @@
 package com.example.kustim_v01.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.kustim_v01.ConfigmenuActivity;
 import com.example.kustim_v01.R;
 
 import java.util.Calendar;
@@ -22,7 +25,6 @@ import java.util.GregorianCalendar;
 public class HomeFragment extends Fragment {
     CountDownTimer countDownTimer;
     TextView timer;
-
     private HomeViewModel homeViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,

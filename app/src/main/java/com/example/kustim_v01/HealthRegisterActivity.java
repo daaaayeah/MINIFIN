@@ -25,17 +25,18 @@ public class HealthRegisterActivity extends AppCompatActivity implements View.On
     }
 
 
-    public void onClick(View v){
+    public void onClick(View v) {
 
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        if (v.getId() == R.id.money_set){
-            db.collection("users").document(User.a).update("money",true);}
-        User.money = true;
-        Log.e("User는 어떻게 됐을까? :",User.a);
-        Toast.makeText(getApplicationContext(), "성사되었습니다. Quest를 Dashboard에서 확인해주세요!", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
+        if (v.getId() == R.id.money_set) {
+            db.collection("users").document(User.a).update("money", true);
+            User.money = true;
 
+            Log.e("User는 어떻게 됐을까? :", User.a);
+            Toast.makeText(getApplicationContext(), "성사되었습니다. Quest를 Dashboard에서 확인해주세요!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+    }
 }

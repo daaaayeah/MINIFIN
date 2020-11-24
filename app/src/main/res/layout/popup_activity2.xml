@@ -88,7 +88,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -113,12 +112,12 @@
 
                 <TextView
                     android:id="@+id/textView14"
-                    android:layout_width="357dp"
+                    android:layout_width="313dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="30dp"
                     android:layout_weight="1"
-                    android:text="7일 동안 7시 기상 3회 이상 성공하기"
+                    android:text="7일 동안 7시 기상 3회 성공하기"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 

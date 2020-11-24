@@ -8,9 +8,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
-import com.example.kustim_v01.CleanRegisterActivity;
 import com.example.kustim_v01.R;
-import com.example.kustim_v01.WakeupRegisterActivity;
+import com.example.kustim_v01.SNSRegisterActivity;
 
 public class PopupActivity4 extends Activity {
 
@@ -48,7 +47,7 @@ public class PopupActivity4 extends Activity {
 
 
         if (v.getId() == R.id.promise_accept4) {
-            Intent intent = new Intent(this, CleanRegisterActivity.class);
+            Intent intent = new Intent(this, SNSRegisterActivity.class);
             startActivity(intent);
         }
         //데이터 전달하기

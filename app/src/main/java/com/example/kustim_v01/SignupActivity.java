@@ -24,11 +24,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SignupActivity extends AppCompatActivity {
+public class SignupActivity extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
     private Button signup_send_btn;
     final String TAG = "[FIRESTORE_TAG]";
     static String a ;
+    Button btn_signin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +37,17 @@ public class SignupActivity extends AppCompatActivity {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
         signup_send_btn = (Button) findViewById(R.id.signup_send);
+
+        btn_signin = findViewById(R.id.btn_signin);
+        btn_signin.setOnClickListener(this);
     }
 
-
+    public void onClick(View v) {
+        if (v.getId() == R.id.btn_signin) {
+            Intent intent = new Intent(this, SigninActivity.class);
+            startActivity(intent);
+        }
+    }
     @Override
     public void onStart() {
         super.onStart();
@@ -83,6 +92,7 @@ public class SignupActivity extends AppCompatActivity {
                                     user.put("promise",false);
                                     user.put("money",false);
                                     user.put("wakeup",false);
+                                    user.put("promise2",false);
                                     db.collection("users")
                                             .add(user)
                                             .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {

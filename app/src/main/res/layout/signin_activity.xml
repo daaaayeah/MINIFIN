@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     android:orientation="vertical">
+    android:orientation="vertical">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -13,83 +13,94 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="220dp"
+            android:layout_height="270dp"
             android:background="@drawable/radius3"
             android:backgroundTint="@color/colorPrimaryDark"
             android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/textView17"
+                android:layout_width="137dp"
+                android:layout_height="137dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/logo_white" />
 
         </FrameLayout>
 
         <LinearLayout
             android:layout_width="375dp"
-            android:layout_height="610dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="70dp"
             android:background="@drawable/radius2"
             android:backgroundTint="#FFFFFF"
             android:gravity="center"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/textView17"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_marginBottom="60dp"
-                android:src="@drawable/logo2"
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:text="LOGIN"
                 android:textAlignment="center"
                 android:textColor="@color/colorPastel"
-                android:textSize="20dp"
+                android:textSize="25dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="E-mail"
                 android:textColor="@color/colorPastel" />
 
             <EditText
                 android:id="@+id/signin_id"
-                android:layout_width="315dp"
+                android:layout_width="300dp"
                 android:layout_height="50dp"
-                android:layout_marginBottom="40dp"
-                android:textColor="#000000"
-                android:backgroundTint="@color/colorPastel"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/btn_input"
                 android:ems="10"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:paddingLeft="20dp"
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/textView16"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="Password"
                 android:textColor="@color/colorPastel" />
 
             <EditText
                 android:id="@+id/signin_pw"
-                android:layout_width="315dp"
+                android:layout_width="300dp"
                 android:layout_height="50dp"
-                android:textColor="#000000"
-                android:backgroundTint="@color/colorPastel"
+                android:background="@drawable/btn_input"
                 android:ems="10"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:paddingLeft="20dp"
+                android:textColor="#000000" />
 
             <Button
                 android:id="@+id/btn_forgotpw"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="90dp"
-                android:layout_marginTop="0dp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
                 android:text="Forgot your password?"
+                android:textAlignment="viewEnd"
                 android:textAllCaps="false"
                 android:textColor="@color/colorPastel"
-                android:textSize="10sp" />
+                android:textSize="11sp" />
 
             <Button
                 android:id="@+id/btn_signin"
                 android:layout_width="175dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="40dp"
                 android:background="@drawable/radius2"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:text="LOGIN"
@@ -97,22 +108,20 @@
 
             <Button
                 android:id="@+id/btn_signup"
-                android:layout_width="200dp"
+                android:layout_width="175dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:text="Don't have an account? Sign up"
-                android:textAllCaps="false"
-                android:textColor="@color/colorPastel"
-                android:textSize="10sp" />
-
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/btn_login"
+                android:text="SIGN UP"
+                android:textColor="@color/colorPrimaryDark" />
         </LinearLayout>
-
     </FrameLayout>
 
     <include
         layout="@layout/view_loader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 </RelativeLayout>

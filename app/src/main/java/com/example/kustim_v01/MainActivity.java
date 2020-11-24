@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,13 +23,15 @@ import com.example.kustim_v01.popup.PopupActivity4;
 import com.example.kustim_v01.popup.PopupActivity5;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -36,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications, R.id.navigation_option)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
 
@@ -84,25 +87,34 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, PopupActivity5.class);
         startActivityForResult(intent, 1);
     }
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu items for use in the action bar
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.action_bar, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_search:
-                Intent intent = new Intent(this, ConfigActivity.class);
-                startActivity(intent);
-                return true;
-            default :
-                return super.onOptionsItemSelected(item) ;
-        }
+    public void configButton(View v) {
+        //데이터 담아서 팝업(액티비티) 호출
+        Intent intent = new Intent(this, ConfigmenuActivity.class);
+        startActivityForResult(intent, 1);
+    }
+    public void recommendButton(View v) {
+        //데이터 담아서 팝업(액티비티) 호출
+        Intent intent = new Intent(this, RecommendActivity.class);
+        startActivityForResult(intent, 1);
     }
     @Override public void onBackPressed(){
         super.onBackPressed();
         finish();
+    }
+
+    @Override
+    public void onClick(View v) {
+
+
+        if(v.getId()==R.id.completed_button){
+
+            Intent intent = new Intent(this, CompletedQuestActivity.class);
+            startActivity(intent);
+        }
+        if(v.getId()==R.id.continue_button){
+
+        }
+
     }
 }

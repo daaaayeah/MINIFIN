@@ -6,14 +6,9 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
-import android.widget.TextView;
 
-import com.example.kustim_v01.LocationActivity;
-import com.example.kustim_v01.PromiseRegisterActivity;
+import com.example.kustim_v01.GeofenceMainActivity;
 import com.example.kustim_v01.R;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class PopupActivity extends Activity {
 
@@ -23,7 +18,7 @@ public class PopupActivity extends Activity {
         super.onCreate(savedInstanceState);
         //타이틀바 없애기
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.popup_activity2);
+        setContentView(R.layout.popup_activity);
 
         //UI 객체생성
 
@@ -49,13 +44,13 @@ public class PopupActivity extends Activity {
     public void mOnClose(View v) {
 
 
-        if (v.getId() == R.id.promise_accept2) {
+        if (v.getId() == R.id.promise_accept) {
 
-                Intent intent = new Intent(this, PromiseRegisterActivity.class);
+                Intent intent = new Intent(this, GeofenceMainActivity.class);
                 startActivity(intent);
             }
             //데이터 전달하기
-            if (v.getId() == R.id.promise_refuse2) {
+            if (v.getId() == R.id.promise_refuse) {
 
                 //액티비티(팝업) 닫기
                 finish();

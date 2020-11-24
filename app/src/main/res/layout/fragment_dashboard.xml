@@ -3,8 +3,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.dashboard.DashboardFragment">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#731DF8"
+        android:gravity="center"
+        android:orientation="horizontal">
 
+        <LinearLayout
+            android:layout_width="336dp"
+            android:layout_height="60dp"
+            android:background="#731DF8"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|left"
+                android:layout_marginLeft="10dp"
+                android:text="Dashboard"
+                android:textColor="#FFFFFF"
+                android:textSize="22.5dp"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="51dp"
+            android:layout_height="match_parent"
+            android:gravity="right|center">
+
+            <Button
+                android:id="@+id/config_button"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:onClick="configButton"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/setting_white"></Button>
+        </LinearLayout>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,27 +58,39 @@
 
             <LinearLayout
                 android:layout_width="150dp"
-                android:layout_height="50dp"
+                android:layout_height="103dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="50dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/button"
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="진행중"
-                    android:textSize="18sp" />
-
-                <Button
-                    android:id="@+id/button4"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="퀘스트 진행 현황"
+                    android:textSize="18sp"></TextView>
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="완료"
-                    android:textSize="18sp" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
+                    <Button
+                        android:id="@+id/continue_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="진행중"
+                        android:textSize="16sp" />
+
+
+                    <Button
+                        android:id="@+id/completed_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="완료"
+                        android:textSize="16sp" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -161,7 +211,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textSize="20sp"
-                            android:text="안녕하십니까"
                             android:gravity="center">
 
                         </TextView>

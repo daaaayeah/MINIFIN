@@ -117,7 +117,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="30dp"
                     android:layout_weight="1"
-                    android:text="7일 동안 7시 기상 3회 이상 성공하기"
+                    android:text="7일 동안 7시 기상 3회 이상 \n성공하기"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 

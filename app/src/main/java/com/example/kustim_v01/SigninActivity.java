@@ -25,7 +25,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 public class SigninActivity extends AppCompatActivity implements View.OnClickListener {
     final String TAG = "[FIRESTORE_TAG]";
     FirebaseAuth mFirebaseAuth;
-
     private FirebaseAuth mAuth;
     Button btn_signin;
     Button btn_signup;
@@ -52,7 +51,6 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
         if (v.getId() == R.id.btn_signin){
             login();
         }
-
         else if (v.getId() == R.id.btn_signup) {
             Intent intent = new Intent(this, SignupActivity.class);
             startActivity(intent);
@@ -71,11 +69,11 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             customProgressDialog.dismiss();
                             if (task.isSuccessful()) {
-                                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                final FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
                                 db.collection("users")
-                                        .whereEqualTo("email",email)
+                                        .whereEqualTo("email", email)
                                         .get()
                                         .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                                             @Override
@@ -83,24 +81,29 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
                                                 if (!task.isSuccessful()) {
                                                     Log.d("No", "Error getting documents: ", task.getException());
                                                 } else {
-                                                    for (QueryDocumentSnapshot document : task.getResult()) {
+
+                                                        for (QueryDocumentSnapshot document : task.getResult()) {
                                                         User user = new User();
                                                         user.email = document.getData().get("email").toString();
                                                         user.uid = document.getData().get("uid").toString();
                                                         user.name = document.getData().get("name").toString();
                                                         user.a = document.getData().get("a").toString();
                                                         user.score = document.getData().get("score").toString();
-                                                        user.promise = (boolean)document.getData().get("promise");
-                                                        user.money = (boolean)document.getData().get("money");
-                                                        user.wakeup = (boolean)document.getData().get("wakeup");
+                                                        user.promise = (boolean) document.getData().get("promise");
+                                                        user.money = (boolean) document.getData().get("money");
+                                                        user.wakeup = (boolean) document.getData().get("wakeup");
+                                                        user.promise2 = (boolean) document.getData().get("promise2");
 
-
+                                                            if (GeofenceTransitionsJobIntentService.success_promise == true) {
+                                                                db.collection("users").document(user.a).update("promise2", true);
+                                                            }
 
                                                     }
-
                                                 }
                                             }
                                         });
+
+
 
 
                                 Toast.makeText(getApplicationContext(), "로그인에 성공하였습니다", Toast.LENGTH_SHORT).show();

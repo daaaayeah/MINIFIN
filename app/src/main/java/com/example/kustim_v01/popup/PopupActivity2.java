@@ -8,9 +8,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
-import com.example.kustim_v01.MoneyRegisterActivity;
-import com.example.kustim_v01.PromiseRegisterActivity;
 import com.example.kustim_v01.R;
+import com.example.kustim_v01.WakeupRegisterActivity;
 
 public class PopupActivity2 extends Activity {
 
@@ -22,7 +21,7 @@ public class PopupActivity2 extends Activity {
         super.onCreate(savedInstanceState);
         //타이틀바 없애기
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.popup_activity3);
+        setContentView(R.layout.popup_activity2);
 
         //UI 객체생성
 
@@ -48,12 +47,12 @@ public class PopupActivity2 extends Activity {
     public void mOnClose(View v) {
 
 
-        if (v.getId() == R.id.promise_accept3) {
-            Intent intent = new Intent(this, MoneyRegisterActivity.class);
+        if (v.getId() == R.id.promise_accept2) {
+            Intent intent = new Intent(this, WakeupRegisterActivity.class);
             startActivity(intent);
         }
         //데이터 전달하기
-        if (v.getId() == R.id.promise_refuse3) {
+        if (v.getId() == R.id.promise_refuse2) {
 
             //액티비티(팝업) 닫기
             finish();

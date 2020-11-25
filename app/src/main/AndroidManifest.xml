@@ -40,11 +40,12 @@
         <activity android:name=".ConfigmenuActivity"/>
         <activity android:name=".CompletedQuestActivity"/>
         <activity android:name=".RecommendActivity"/>
-        <activity android:name=".popup.PopupActivity" android:theme="@android:style/Theme.Dialog"/>
-        <activity android:name=".popup.PopupActivity2" android:theme="@android:style/Theme.Dialog"/>
-        <activity android:name=".popup.PopupActivity3" android:theme="@android:style/Theme.Dialog"/>
-        <activity android:name=".popup.PopupActivity4" android:theme="@android:style/Theme.Dialog"/>
-        <activity android:name=".popup.PopupActivity5" android:theme="@android:style/Theme.Dialog"/>
+
+        <activity android:name=".popup.PopupActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name=".popup.PopupActivity2" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name=".popup.PopupActivity3" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name=".popup.PopupActivity4" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name=".popup.PopupActivity5" android:theme="@android:style/Theme.Translucent"/>
 
         <activity android:name=".GeofenceMainActivity"/>
         <receiver

@@ -16,8 +16,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -35,8 +35,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center|left"
                         android:layout_marginLeft="10dp"
+                        android:gravity="center|left"
                         android:text="Home"
                         android:textColor="#FFFFFF"
                         android:textSize="22.5dp"
@@ -52,9 +52,9 @@
                         android:id="@+id/config_button"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:onClick="configButton"
                         android:layout_marginRight="10dp"
-                        android:background="@drawable/setting_white"></Button>
+                        android:background="@drawable/setting_white"
+                        android:onClick="configButton"></Button>
                 </LinearLayout>
             </LinearLayout>
 
@@ -207,35 +207,63 @@
                         android:orientation="vertical">
 
                         <LinearLayout
+                            android:id="@+id/promise_mission"
+                            android:layout_width="350dp"
+                            android:layout_height="75dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/btn_mission"
+                            android:gravity="center_vertical"
+                            android:onClick="mOnPopupClick"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/check"
+                                app:tint="#FF7347" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="이번 주 약속 하나를 달성하세요!"
+                                android:textColor="#000000"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:background="#F1F1EF"
+                        android:gravity="bottom|center_horizontal"
+                        android:orientation="vertical">
+
+                        <LinearLayout
                             android:id="@+id/wakeup_mission"
                             android:layout_width="350dp"
                             android:layout_height="75dp"
                             android:layout_marginTop="10dp"
-                            android:background="@drawable/shadow"
+                            android:background="@drawable/btn_mission"
                             android:gravity="center_vertical"
+                            android:onClick="mOnPopupClick2"
                             android:orientation="horizontal">
 
-                            <LinearLayout
-                                android:layout_width="60dp"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="38dp"
-                                    android:layout_height="45dp"
-                                    android:backgroundTint="#FFFFFF"
-                                    android:src="@drawable/check"
-                                    app:tint="#FF7347" />
-                            </LinearLayout>
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/check"
+                                app:tint="#FF7347" />
 
                             <TextView
-                                android:layout_width="282dp"
-                                android:layout_height="80dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:onClick="mOnPopupClick"
-                                android:text="이번 주 약속 하나를 달성하세요!"
+                                android:text="이번 주 최고 성실맨이 되어라!"
                                 android:textColor="#000000"
                                 android:textSize="20sp" />
                         </LinearLayout>
@@ -253,70 +281,23 @@
                             android:layout_width="350dp"
                             android:layout_height="75dp"
                             android:layout_marginTop="10dp"
-                            android:background="@drawable/shadow"
+                            android:background="@drawable/btn_mission"
                             android:gravity="center_vertical"
+                            android:onClick="mOnPopupClick3"
                             android:orientation="horizontal">
 
-                            <LinearLayout
-                                android:layout_width="60dp"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="38dp"
-                                    android:layout_height="45dp"
-                                    android:src="@drawable/check"
-                                    app:tint="#FF7347" />
-                            </LinearLayout>
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/check"
+                                app:tint="#FF7347" />
 
                             <TextView
-                                android:layout_width="282dp"
-                                android:layout_height="80dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:onClick="mOnPopupClick2"
-                                android:text="이번 주 최고 성실맨이 되어라!!"
-                                android:textColor="#000000"
-                                android:textSize="20sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:background="#F1F1EF"
-                        android:gravity="bottom|center_horizontal"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:id="@+id/promise_mission"
-                            android:layout_width="350dp"
-                            android:layout_height="75dp"
-                            android:layout_marginTop="10dp"
-                            android:background="@drawable/shadow"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="60dp"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="38dp"
-                                    android:layout_height="45dp"
-                                    android:src="@drawable/check"
-                                    app:tint="#FF7347" />
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="282dp"
-                                android:layout_height="80dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:onClick="mOnPopupClick3"
                                 android:text="이번 주 짠돌이 되기 챌린지!"
                                 android:textColor="#000000"
                                 android:textSize="20sp" />
@@ -334,29 +315,23 @@
                             android:layout_width="350dp"
                             android:layout_height="75dp"
                             android:layout_marginTop="10dp"
-                            android:background="@drawable/shadow"
+                            android:background="@drawable/btn_mission"
                             android:gravity="center_vertical"
+                            android:onClick="mOnPopupClick4"
                             android:orientation="horizontal">
 
-                            <LinearLayout
-                                android:layout_width="60dp"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="38dp"
-                                    android:layout_height="45dp"
-                                    android:src="@drawable/check"
-                                    app:tint="#FF7347" />
-                            </LinearLayout>
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/check"
+                                app:tint="#FF7347" />
 
                             <TextView
-                                android:layout_width="282dp"
-                                android:layout_height="80dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:onClick="mOnPopupClick4"
                                 android:text="이번 주 인싸가 되어보자!"
                                 android:textColor="#000000"
                                 android:textSize="20sp" />
@@ -374,33 +349,26 @@
                             android:layout_width="350dp"
                             android:layout_height="75dp"
                             android:layout_marginTop="10dp"
-                            android:background="@drawable/shadow"
+                            android:background="@drawable/btn_mission"
                             android:gravity="center_vertical"
+                            android:onClick="mOnPopupClick5"
                             android:orientation="horizontal">
 
-                            <LinearLayout
-                                android:layout_width="60dp"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="38dp"
-                                    android:layout_height="45dp"
-                                    android:src="@drawable/check"
-                                    app:tint="#FF7347" />
-                            </LinearLayout>
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/check"
+                                app:tint="#FF7347" />
 
                             <TextView
-                                android:layout_width="282dp"
-                                android:layout_height="80dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:onClick="mOnPopupClick5"
                                 android:text="이번 주 운동왕이 되어보자!"
                                 android:textColor="#000000"
-                                android:textSize="20sp"
-                                tools:ignore="OnClick" />
+                                android:textSize="20sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -463,12 +431,12 @@
                                 android:textSize="20sp"></TextView>
 
                             <Button
-                                android:onClick="recommendButton"
                                 android:layout_width="70dp"
                                 android:layout_height="35dp"
                                 android:layout_marginTop="15dp"
                                 android:background="@drawable/radius4"
                                 android:backgroundTint="@color/colorPrimaryDark"
+                                android:onClick="recommendButton"
                                 android:text="GO!"
                                 android:textColor="#FFFFFF"></Button>
 

@@ -50,7 +50,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:orientation="horizontal">
@@ -87,7 +87,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:orientation="horizontal">
@@ -118,7 +118,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_weight="1"
                     android:paddingRight="30dp"
-                    android:text="SNS에서 5명과 맞팔로잉하고 캡쳐화면 올리면 미션 성공!"
+                    android:text="SNS에서 5명과 맞팔로잉하고\n캡쳐화면 올리면 미션 성공!"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -127,7 +127,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:orientation="horizontal">
@@ -165,8 +165,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="104dp"
+                android:paddingLeft="40dp"
                 android:layout_marginTop="20dp"
-                android:gravity="bottom|center"
+                android:gravity="bottom"
                 android:orientation="horizontal">
 
                 <Button
@@ -182,15 +183,11 @@
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
-                <LinearLayout
-                    android:layout_width="84dp"
-                    android:layout_height="60dp"
-                    android:orientation="horizontal"></LinearLayout>
-
                 <Button
                     android:id="@+id/promise_refuse4"
                     android:layout_width="110dp"
                     android:layout_height="55dp"
+                    android:layout_marginLeft="83dp"
                     android:layout_marginBottom="15dp"
                     android:background="@drawable/radius"
                     android:backgroundTint="#731DF8"

@@ -51,7 +51,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:orientation="horizontal">
@@ -88,7 +88,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:orientation="horizontal">
@@ -114,13 +114,13 @@
 
                 <TextView
                     android:id="@+id/textView14"
-                    android:layout_width="357dp"
+                    android:layout_width="232dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="30dp"
                     android:layout_weight="1"
                     android:paddingRight="30dp"
-                    android:text="친구와 약속 등록 후, 장소에 제 시간에 도착하기!"
+                    android:text="친구와 약속 등록 후,\n장소에 제 시간에 도착하기!"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -129,7 +129,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:orientation="horizontal">
@@ -168,8 +168,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="104dp"
                 android:layout_marginTop="20dp"
-                android:gravity="bottom|center"
-                android:orientation="horizontal">
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                android:paddingLeft="40dp">
 
                 <Button
                     android:id="@+id/promise_accept"
@@ -184,15 +185,11 @@
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
-                <LinearLayout
-                    android:layout_width="84dp"
-                    android:layout_height="60dp"
-                    android:orientation="horizontal"></LinearLayout>
-
                 <Button
                     android:id="@+id/promise_refuse"
                     android:layout_width="110dp"
                     android:layout_height="55dp"
+                    android:layout_marginLeft="83dp"
                     android:layout_marginBottom="15dp"
                     android:background="@drawable/radius"
                     android:backgroundTint="#731DF8"

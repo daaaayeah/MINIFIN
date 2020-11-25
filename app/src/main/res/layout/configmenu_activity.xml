@@ -1,202 +1,255 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#731DF8"
-    android:gravity="bottom"
+    android:orientation="vertical"
     tools:context=".ui.notifications.NotificationsFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="663dp"
-        android:gravity="center"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#731DF8"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:gravity="center|left"
+            android:text="Settings"
+            android:textColor="#FFFFFF"
+            android:textSize="22.5dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/main_radius"
+        android:gravity="center|top"
         android:orientation="vertical">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:background="@android:color/darker_gray" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="670dp"
-            android:background="@drawable/main_radius"
-            android:gravity="center|top"
-            android:orientation="vertical">
+            android:layout_height="80dp"
+            android:paddingLeft="20dp"
+            android:gravity="center_vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:gravity="center">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/configmenu_icon1"></ImageView>
 
-            </LinearLayout>
+            <TextView
+                android:layout_width="224dp"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:gravity="center|left"
+                android:text="공지사항"
+                android:textSize="24sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/configmenu_icon1"></ImageView>
-
-                <TextView
-                    android:layout_width="224dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="15dp"
-                    android:gravity="center|left"
-                    android:text="공지사항"
-                    android:textSize="24sp">
-
-                </TextView>
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/configmenu_next"></ImageView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/configmenu_icon2"></ImageView>
-
-                <TextView
-                    android:layout_width="224dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="15dp"
-                    android:gravity="center|left"
-                    android:text="알림설정"
-                    android:textSize="24sp">
-
-                </TextView>
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/configmenu_next"></ImageView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/configmenu_icon3"></ImageView>
-
-                <TextView
-                    android:layout_width="224dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="15dp"
-                    android:gravity="center|left"
-                    android:text="잠금화면"
-                    android:textSize="24sp">
-
-                </TextView>
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/configmenu_next"></ImageView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/configmenu_icon4"></ImageView>
-
-                <TextView
-                    android:layout_width="224dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="15dp"
-                    android:gravity="center|left"
-                    android:text="배너/위젯"
-                    android:textSize="24sp">
-
-                </TextView>
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/configmenu_next"></ImageView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/configmenu_icon5"></ImageView>
-
-                <TextView
-                    android:layout_width="224dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="15dp"
-                    android:gravity="center|left"
-                    android:text="고객센터"
-                    android:textSize="24sp">
-
-                </TextView>
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/configmenu_next"></ImageView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/configmenu_icon6"></ImageView>
-
-                <TextView
-                    android:layout_width="224dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="15dp"
-                    android:gravity="center|left"
-                    android:text="로그아웃"
-                    android:textSize="24sp">
-
-                </TextView>
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/configmenu_next"></ImageView>
-            </LinearLayout>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="35dp"
+                android:src="@drawable/configmenu_next"></ImageView>
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingLeft="20dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/configmenu_icon2"></ImageView>
+
+            <TextView
+                android:layout_width="224dp"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:gravity="center|left"
+                android:text="알림설정"
+                android:textSize="24sp">
+
+            </TextView>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="35dp"
+                android:src="@drawable/configmenu_next"></ImageView>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingLeft="20dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/configmenu_icon3"></ImageView>
+
+            <TextView
+                android:layout_width="224dp"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:gravity="center|left"
+                android:text="잠금화면"
+                android:textSize="24sp">
+
+            </TextView>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="35dp"
+                android:src="@drawable/configmenu_next"></ImageView>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingLeft="20dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/configmenu_icon4"></ImageView>
+
+            <TextView
+                android:layout_width="224dp"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:gravity="center|left"
+                android:text="배너/위젯"
+                android:textSize="24sp">
+
+            </TextView>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="35dp"
+                android:src="@drawable/configmenu_next"></ImageView>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingLeft="20dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/configmenu_icon5"></ImageView>
+
+            <TextView
+                android:layout_width="224dp"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:gravity="center|left"
+                android:text="고객센터"
+                android:textSize="24sp">
+
+            </TextView>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="35dp"
+                android:src="@drawable/configmenu_next"></ImageView>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingLeft="20dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/configmenu_icon6"></ImageView>
+
+            <TextView
+                android:layout_width="224dp"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:gravity="center|left"
+                android:text="로그아웃"
+                android:textSize="24sp">
+
+            </TextView>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="35dp"
+                android:src="@drawable/configmenu_next"></ImageView>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="150dp"
+            android:layout_gravity="center"
+            android:background="@android:color/darker_gray" />
 
     </LinearLayout>
 </LinearLayout>

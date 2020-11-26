@@ -27,6 +27,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
@@ -57,9 +58,12 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -75,11 +79,38 @@ import java.util.Map;
  */
 public class GeofenceMainActivity extends AppCompatActivity implements OnCompleteListener<Void>,OnMapReadyCallback{
     Calendar myCalendar = Calendar.getInstance();
-
+    static LatLng place;
     private GoogleMap mMap;
     private Geocoder geocoder;
     private Button button;
     private EditText editText;
+    static int choise_year;
+    static int choise_month;
+    static int choise_day;
+    static int choise_hour;
+    static int choise_minute;
+    public int countdday(int myear, int mmonth, int mday, int mhour, int mminute) {
+        try {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm");
+
+            Calendar todaCal = Calendar.getInstance(); //오늘날자 가져오기
+            Calendar ddayCal = Calendar.getInstance(); //오늘날자를 가져와 변경시킴
+
+            ddayCal.set(myear,mmonth,mday,mhour,mminute);// D-day의 날짜를 입력
+            Log.e("테스트",simpleDateFormat.format(todaCal.getTime()) + "");
+            Log.e("테스트",simpleDateFormat.format(ddayCal.getTime()) + "");
+
+            long today = todaCal.getTimeInMillis(); //->(24 * 60 * 60 * 1000) 24시간 60분 60초 * (ms초->초 변환 1000)
+            long dday = ddayCal.getTimeInMillis();
+            long count = dday - today; // 오늘 날짜에서 dday 날짜를 빼주게 됩니다.
+            return (int) count;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            return -1;
+        }
+    }
 
     DatePickerDialog.OnDateSetListener myDatePicker = new DatePickerDialog.OnDateSetListener() {
         @Override
@@ -87,6 +118,9 @@ public class GeofenceMainActivity extends AppCompatActivity implements OnComplet
             myCalendar.set(Calendar.YEAR, year);
             myCalendar.set(Calendar.MONTH, month);
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            choise_year=year;
+            choise_month=month;
+            choise_day=dayOfMonth;
             updateLabel();
         }
     };
@@ -105,7 +139,7 @@ public class GeofenceMainActivity extends AppCompatActivity implements OnComplet
     /**
      * Provides access to the Geofencing API.
      */
-    private GeofencingClient mGeofencingClient;
+    private static GeofencingClient mGeofencingClient;
 
     /**
      * The list of geofences used in this sample.
@@ -124,11 +158,11 @@ public class GeofenceMainActivity extends AppCompatActivity implements OnComplet
     private PendingGeofenceTask mPendingGeofenceTask = PendingGeofenceTask.NONE;
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.promise_register);
         editText = (EditText) findViewById(R.id.editText);
         button=(Button)findViewById(R.id.button);
+
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -155,12 +189,16 @@ public class GeofenceMainActivity extends AppCompatActivity implements OnComplet
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                         String state = "AM";
+
+                        choise_hour=selectedHour;
+                        choise_minute=selectedMinute;
                         // 선택한 시간이 12를 넘을경우 "PM"으로 변경 및 -12시간하여 출력 (ex : PM 6시 30분)
                         if (selectedHour > 12) {
                             selectedHour -= 12;
                             state = "PM";
                         }
                         // EditText에 출력할 형식 지정
+
                         et_time.setText(state + " " + selectedHour + "시 " + selectedMinute + "분");
                     }
                 }, hour, minute, false); // true의 경우 24시간 형식의 TimePicker 출현
@@ -181,7 +219,6 @@ public class GeofenceMainActivity extends AppCompatActivity implements OnComplet
         setButtonsEnabledState();
 
         // Get the geofences used. Geofence data is hard coded in this sample.
-        populateGeofenceList();
 
        mGeofencingClient = LocationServices.getGeofencingClient(this);
     }
@@ -215,6 +252,7 @@ public class GeofenceMainActivity extends AppCompatActivity implements OnComplet
                 mOptions.position(new LatLng(latitude, longitude));
                 // 마커(핀) 추가
                 googleMap.addMarker(mOptions);
+
             }
         });
         ////////////////////
@@ -222,7 +260,9 @@ public class GeofenceMainActivity extends AppCompatActivity implements OnComplet
         // 버튼 이벤트
         button.setOnClickListener(new Button.OnClickListener(){
             @Override
+
             public void onClick(View v){
+
                 String str=editText.getText().toString();
                 List<Address> addressList = null;
                 try {
@@ -257,7 +297,9 @@ public class GeofenceMainActivity extends AppCompatActivity implements OnComplet
                 mMap.addMarker(mOptions2);
                 // 해당 좌표로 화면 줌
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(point,15));
-                User.place = point;
+
+                place = point;
+
             }
         });
         ////////////////////
@@ -304,13 +346,30 @@ public class GeofenceMainActivity extends AppCompatActivity implements OnComplet
      * specified geofences. Handles the success or failure results returned by addGeofences().
      */
     public void addGeofencesButtonHandler(View view) {
+
+
         if (!checkPermissions()) {
             mPendingGeofenceTask = PendingGeofenceTask.ADD;
             requestPermissions();
             return;
         }
+        populateGeofenceList();
+        Toast.makeText(getApplicationContext(), "성사되었습니다. Quest를 Dashboard에서 확인해주세요!", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        new CountDownTimer(
+                countdday(choise_year, choise_month, choise_day, choise_hour, choise_minute), 1000) {
+            @Override
 
-        addGeofences();
+            public void onTick(long l) {
+
+            }
+
+            @Override
+            public void onFinish() {
+                addGeofences();
+            }
+        }.start();
     }
 
     /**
@@ -347,7 +406,7 @@ public class GeofenceMainActivity extends AppCompatActivity implements OnComplet
      * permission.
      */
     @SuppressWarnings("MissingPermission")
-    private void removeGeofences() {
+    public void removeGeofences() {
         if (!checkPermissions()) {
             showSnackbar(getString(R.string.insufficient_permissions));
             return;
@@ -366,13 +425,12 @@ public class GeofenceMainActivity extends AppCompatActivity implements OnComplet
 
         mPendingGeofenceTask = PendingGeofenceTask.NONE;
         if (task.isSuccessful()) {
-            updateGeofencesAdded(!getGeofencesAdded());
+
+                updateGeofencesAdded(!getGeofencesAdded());
             setButtonsEnabledState();
             FirebaseFirestore db = FirebaseFirestore.getInstance();
             db.collection("users").document(User.a).update("promise",true);
             User.promise = true;
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
             int messageId = getGeofencesAdded() ? R.string.geofences_added :
                     R.string.geofences_removed;
 
@@ -408,6 +466,18 @@ public class GeofenceMainActivity extends AppCompatActivity implements OnComplet
      * the user's location.
      */
     private void populateGeofenceList() {
+        Constants.BAY_AREA_LANDMARKS= new HashMap<>();
+        LatLng firstplace;
+        if(place!=null){
+            firstplace=place;
+        }
+        else {
+
+            firstplace = new LatLng(37.40027347229311, 127.27082215349894);
+        }
+
+        Constants.BAY_AREA_LANDMARKS.put("SFO", firstplace);
+        Constants.BAY_AREA_LANDMARKS.put("GOOGLE",firstplace);
         for (Map.Entry<String, LatLng> entry : Constants.BAY_AREA_LANDMARKS.entrySet()) {
 
             mGeofenceList.add(new Geofence.Builder()

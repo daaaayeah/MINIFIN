@@ -84,7 +84,7 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/circle"
                     android:backgroundTint="#FFFFFF"
-                    android:src="@drawable/user" />
+                    android:src="@drawable/peopleplus" />
 
 
             </LinearLayout>

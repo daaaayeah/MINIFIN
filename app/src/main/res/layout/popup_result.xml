@@ -1,68 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="400dp"
-    android:layout_height="640dp"
-    android:orientation="vertical">
 
-    <!-- 타이틀바 -->
-    <LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:id="@+id/layout_result"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#731DF8"
+    android:fitsSystemWindows="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".GeofenceMainActivity">
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/radius2"
-        android:backgroundTint="#EDEDED"
+        android:background="@color/colorBackground"
+        android:gravity="center"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imageView3"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginTop="160dp"
-            app:srcCompat="@drawable/search" />
+            android:layout_height="270dp"
+            android:background="@drawable/radius3"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#731DF8"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="336dp"
+                    android:layout_height="60dp"
+                    android:background="#731DF8"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center|left"
+                        android:text="Quest"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22.5dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="51dp"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center">
+
+                    <Button
+                        android:id="@+id/config_button"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/setting_white"
+                        android:onClick="configButton"></Button>
+
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="375dp"
+            android:layout_height="672dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/main_radius"
+            android:backgroundTint="#E6E6E6"
             android:gravity="center"
-            android:text="퀘스트 완료!"
-            android:textColor="#000000"
-            android:textSize="36sp" />
+            android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="친구와 약속 잡기(약속 이름)"
-            android:textSize="18sp" />
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:srcCompat="@drawable/search" />
 
-        <Button
-            android:id="@+id/promise_check"
-            android:layout_width="120dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="100dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/radius"
-            android:backgroundTint="#731DF8"
-            android:onClick="mOnClose"
-            android:padding="16dp"
-            android:text="확인"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="퀘스트 완료!"
+                android:textColor="#000000"
+                android:textSize="36sp" />
 
-    <!-- //end 타이틀바 -->
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="이번 주 약속왕이 되어라!"
+                android:textSize="18sp" />
 
-    <!-- Notice -->
-    <!-- Notice -->
+            <Button
+                android:id="@+id/promise_check"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/radius"
+                android:backgroundTint="#731DF8"
+                android:onClick="mOnClose"
+                android:padding="16dp"
+                android:text="확인"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </FrameLayout>
 
-    <!-- 닫기 버튼 -->
-
-    <!--// 닫기 버튼 -->
 </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

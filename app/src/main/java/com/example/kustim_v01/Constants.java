@@ -49,13 +49,9 @@ final class Constants {
     /**
      * Map for storing information about airports in the San Francisco bay area.
      */
-    static final HashMap<String, LatLng> BAY_AREA_LANDMARKS = new HashMap<>();
+    static HashMap<String, LatLng> BAY_AREA_LANDMARKS = new HashMap<>();
 
     static {
         // San Francisco International Airport.
-        BAY_AREA_LANDMARKS.put("SFO", new LatLng(37.400299041623484, 127.27090798438822));
-
-        // Googleplex.
-        BAY_AREA_LANDMARKS.put("GOOGLE", new LatLng(37.400299041623484, 127.27090798438822));
     }
 }

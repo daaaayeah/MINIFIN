@@ -81,8 +81,7 @@ public class GeofenceTransitionsJobIntentService extends JobIntentService {
         int geofenceTransition = geofencingEvent.getGeofenceTransition();
 
         // Test that the reported transition was of interest.
-        if (geofenceTransition == Geofence.GEOFENCE_TRANSITION_ENTER ||
-                geofenceTransition == Geofence.GEOFENCE_TRANSITION_EXIT) {
+        if (geofenceTransition == Geofence.GEOFENCE_TRANSITION_ENTER) {
 
             // Get the geofences that were triggered. A single event can trigger multiple geofences.
             List<Geofence> triggeringGeofences = geofencingEvent.getTriggeringGeofences();
@@ -99,10 +98,19 @@ public class GeofenceTransitionsJobIntentService extends JobIntentService {
             sendNotification(geofenceTransitionDetails);
             success_promise = true;
             Log.i(TAG, geofenceTransitionDetails);
-        } else {
+        }
+        else if(geofenceTransition == Geofence.GEOFENCE_TRANSITION_EXIT){
+
+            Toast.makeText(getApplicationContext(), "미션 실패..", Toast.LENGTH_SHORT).show();
+        }
+        else {
             // Log the error.
             Log.e(TAG, getString(R.string.geofence_transition_invalid_type, geofenceTransition));
         }
+
+
+
+
     }
 
     /**
@@ -149,7 +157,7 @@ public class GeofenceTransitionsJobIntentService extends JobIntentService {
         }
 
         // Create an explicit content Intent that starts the main Activity.
-        Intent notificationIntent = new Intent(getApplicationContext(), com.example.kustim_v01.SigninActivity.class);
+        Intent notificationIntent = new Intent(getApplicationContext(), PopupresultActivity.class);
 
         // Construct a task stack.
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
@@ -172,7 +180,7 @@ public class GeofenceTransitionsJobIntentService extends JobIntentService {
                 // In a real app, you may want to use a library like Volley
                 // to decode the Bitmap.
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(),
-                        R.drawable.logo1))
+                        R.drawable.puzzle_mini))
                 .setColor(Color.RED)
                 .setContentTitle("퀘스트 완료")
                 .setContentText(getString(R.string.geofence_transition_notification_text))

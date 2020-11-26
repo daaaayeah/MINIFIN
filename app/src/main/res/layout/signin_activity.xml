@@ -54,7 +54,7 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="E-mail"
+                android:text="이메일"
                 android:textColor="@color/colorPastel" />
 
             <EditText
@@ -73,7 +73,7 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Password"
+                android:text="비밀번호"
                 android:textColor="@color/colorPastel" />
 
             <EditText
@@ -86,21 +86,35 @@
                 android:paddingLeft="20dp"
                 android:textColor="#000000" />
 
-            <Button
-                android:id="@+id/btn_forgotpw"
+            <LinearLayout
                 android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:text="Forgot your password?"
-                android:textAlignment="viewEnd"
-                android:textAllCaps="false"
-                android:textColor="@color/colorPastel"
-                android:textSize="11sp" />
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:buttonTint="@color/colorPastel"
+                    android:text="로그인 정보 저장"
+                    android:textColor="@color/colorPastel"
+                    android:textSize="13dp" />
+
+                <Button
+                    android:id="@+id/btn_forgotpw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewEnd"
+                    android:text="이메일/비밀번호 찾기"
+                    android:textColor="@color/colorPastel"
+                    android:textSize="13dp" />
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/btn_signin"
                 android:layout_width="175dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="50dp"
                 android:background="@drawable/radius2"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:text="LOGIN"
@@ -111,7 +125,7 @@
                 android:layout_width="175dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="40dp"
                 android:background="@drawable/btn_login"
                 android:text="SIGN UP"
                 android:textColor="@color/colorPrimaryDark" />

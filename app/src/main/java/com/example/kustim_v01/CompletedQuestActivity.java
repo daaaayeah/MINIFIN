@@ -19,7 +19,7 @@ public class CompletedQuestActivity extends AppCompatActivity {
         completed_first_num = findViewById(R.id.completed_first_num);
 
         if (User.promise2==true) {
-            completed_first.setText("약속왕이 되어라!");
+            completed_first.setText("이번 주 약속 하나를 달성하세요!");
             completed_first_num.setText("1회");
         }
         else{}

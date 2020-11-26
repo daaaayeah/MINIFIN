@@ -86,7 +86,6 @@
                     android:backgroundTint="#FFFFFF"
                     android:src="@drawable/peopleplus" />
 
-
             </LinearLayout>
 
             <LinearLayout

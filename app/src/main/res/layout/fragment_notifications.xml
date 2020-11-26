@@ -72,133 +72,155 @@
                     android:textSize="25dp" />
 
                 <LinearLayout
-                    android:layout_width="380dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginBottom="2.5dp"
-                    android:paddingLeft="20dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/shadow2"
-                    android:gravity="center_vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="32.5dp"
-                        android:layout_height="32.5dp"
-                        android:src="@drawable/bell"
-                        app:tint="@android:color/black" />
+                    <LinearLayout
+                        android:id="@+id/noti_layout1"
+                        android:layout_width="380dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="2.5dp"
+                        android:background="@drawable/shadow2"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="20dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:text=""
-                        android:textColor="@android:color/black"
-                        android:textSize="17.5dp" />
-                </LinearLayout>
+                        <ImageView
+                            android:layout_width="32.5dp"
+                            android:layout_height="32.5dp"
+                            android:src="@drawable/bell"
+                            app:tint="@android:color/black" />
 
-                <LinearLayout
-                    android:layout_width="380dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginBottom="2.5dp"
-                    android:paddingLeft="20dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/shadow"
-                    android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="'이번 주 약속왕이 되어라!'\n 퀘스트를 성공했습니다."
+                            android:textColor="@android:color/black"
+                            android:textSize="17.5dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:id="@+id/noti_layout2">
+                    <LinearLayout
+                        android:id="@+id/noti_layout3"
+                        android:layout_width="380dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="2.5dp"
+                        android:background="@drawable/shadow"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="20dp">
 
-                    <ImageView
-                        android:layout_width="32.5dp"
-                        android:layout_height="32.5dp"
-                        android:src="@drawable/bell"
-                        app:tint="@android:color/black" />
+                        <ImageView
+                            android:layout_width="32.5dp"
+                            android:layout_height="32.5dp"
+                            android:src="@drawable/bell"
+                            app:tint="@android:color/black" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:text="'이번 주 최고 성실맨이 되어라!'
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="'이번 주 최고 성실맨이 되어라!'
                                       퀘스트를 실패했습니다."
-                        android:textColor="@android:color/black"
-                        android:textSize="17.5dp" />
-                </LinearLayout>
+                            android:textColor="@android:color/black"
+                            android:textSize="17.5dp" />
+                    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="380dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginBottom="2.5dp"
-                    android:paddingLeft="20dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/shadow"
-                    android:gravity="center_vertical">
+                    <LinearLayout
+                        android:layout_width="380dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="2.5dp"
+                        android:background="@drawable/shadow"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="20dp">
 
-                    <ImageView
-                        android:layout_width="32.5dp"
-                        android:layout_height="32.5dp"
-                        android:src="@drawable/bell"
-                        app:tint="@android:color/black" />
+                        <ImageView
+                            android:layout_width="32.5dp"
+                            android:layout_height="32.5dp"
+                            android:src="@drawable/bell"
+                            app:tint="@android:color/black" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:text="'이번 주 운동왕은 바로 나!'
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="'이번 주 운동왕은 바로 나!'
                                       퀘스트를 성공했습니다."
-                        android:textColor="@android:color/black"
-                        android:textSize="17.5dp" />
-                </LinearLayout>
+                            android:textColor="@android:color/black"
+                            android:textSize="17.5dp" />
+                    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="380dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:paddingLeft="20dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/shadow"
-                    android:gravity="center_vertical">
+                    <LinearLayout
+                        android:layout_width="380dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shadow"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="20dp">
 
-                    <ImageView
-                        android:layout_width="32.5dp"
-                        android:layout_height="32.5dp"
-                        android:src="@drawable/bell"
-                        app:tint="@android:color/black" />
+                        <ImageView
+                            android:layout_width="32.5dp"
+                            android:layout_height="32.5dp"
+                            android:src="@drawable/bell"
+                            app:tint="@android:color/black" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:text="Instagram: kusitms_official님이
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="Instagram: kusitms_official님이
                                       댓글에서 회원님을 언급했습니다."
-                        android:textColor="@android:color/black"
-                        android:textSize="17.5dp" />
-                </LinearLayout>
+                            android:textColor="@android:color/black"
+                            android:textSize="17.5dp" />
+                    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="380dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="5dp"
-                    android:paddingLeft="20dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/shadow"
-                    android:gravity="center_vertical">
+                    <LinearLayout
+                        android:layout_width="380dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/shadow"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="20dp">
 
-                    <ImageView
-                        android:layout_width="32.5dp"
-                        android:layout_height="32.5dp"
-                        android:src="@drawable/bell"
-                        app:tint="@android:color/black" />
+                        <ImageView
+                            android:layout_width="32.5dp"
+                            android:layout_height="32.5dp"
+                            android:src="@drawable/bell"
+                            app:tint="@android:color/black" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:text="작은 곳에서부터 시작하는 신용 관리,
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="작은 곳에서부터 시작하는 신용 관리,
                                       미니핀 회원가입을 환영합니다!"
-                        android:textColor="@android:color/black"
-                        android:textSize="17.5dp" />
-                </LinearLayout>
+                            android:textColor="@android:color/black"
+                            android:textSize="17.5dp" />
 
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/noti_layout4"
+                            android:layout_width="380dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="20dp"
+                            android:orientation="vertical"></LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

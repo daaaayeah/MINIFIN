@@ -31,27 +31,15 @@ public class NotificationsFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         notificationsViewModel =
                 ViewModelProviders.of(this).get(NotificationsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
+        if (User.promise2 == true) {
 
-        layout1 =root.findViewById(R.id.noti_layout1);
-        params2 = (LinearLayout.LayoutParams) layout1.getLayoutParams();
-        params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,0);
-        layout1.setLayoutParams(params);
-        layout3 = root.findViewById(R.id.noti_layout3);
-        layout4 = root.findViewById(R.id.noti_layout4);
+            View root = inflater.inflate(R.layout.fragment_notifications2, container, false);
 
-        if(User.promise2==true) {
+            return root;
+        } else {
+            View root = inflater.inflate(R.layout.fragment_notifications, container, false);
 
-            /*해당 margin값 변경*/
-            params2.height=135;
-            params2.width=500;
-            params2.bottomMargin = 10;
-            params2.topMargin = 10;
-
-            /*변경된 값의 파라미터를 해당 레이아웃 파라미터 값에 셋팅*/
-            layout1.setLayoutParams(params2);
-            layout4.setLayoutParams(params);
+            return root;
         }
-        return root;
     }
 }

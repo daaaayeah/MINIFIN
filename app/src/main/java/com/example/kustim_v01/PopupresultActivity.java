@@ -9,9 +9,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class PopupresultActivity extends AppCompatActivity implements View.OnClickListener{
 Button promise_check;
+    static boolean success_promise=false;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popup_result);
+        success_promise = true;
 
         promise_check = findViewById(R.id.promise_check);
         promise_check.setOnClickListener(this);
@@ -20,7 +22,6 @@ Button promise_check;
 
     public void onClick(View v) {
         if (v.getId() == R.id.promise_check) {
-
             Intent intent = new Intent(this, SigninActivity.class);
             startActivity(intent);
         }

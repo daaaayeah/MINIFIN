@@ -46,7 +46,7 @@ import java.util.List;
  * as the output.
  */
 public class GeofenceTransitionsJobIntentService extends JobIntentService {
-    static boolean success_promise=false;
+
 
 
     private static final int JOB_ID = 573;
@@ -96,12 +96,10 @@ public class GeofenceTransitionsJobIntentService extends JobIntentService {
 
 
             sendNotification(geofenceTransitionDetails);
-            success_promise = true;
             Log.i(TAG, geofenceTransitionDetails);
         }
         else if(geofenceTransition == Geofence.GEOFENCE_TRANSITION_EXIT){
 
-            Toast.makeText(getApplicationContext(), "미션 실패..", Toast.LENGTH_SHORT).show();
         }
         else {
             // Log the error.

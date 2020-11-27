@@ -167,8 +167,7 @@
                                 android:id="@+id/textView24"
                                 android:layout_width="310dp"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="미션 갱신까지"
+                                android:text="              미션 갱신까지"
                                 android:textColor="#000000"
                                 android:textSize="22sp" />
 

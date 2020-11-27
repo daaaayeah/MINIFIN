@@ -7,10 +7,10 @@
 
     <!-- Buttons strings -->
     <string name="add_geofences">Add geofences</string>
-    <string name="remove_geofences">Remove geofences</string>
+    <string name="remove_geofences">Reset GPS</string>
 
-    <string name="geofences_added">미션의 약속 시간이 되었습니다.</string>
-    <string name="geofences_removed">GPS가 초기화되었습니다. 다시 신청해주세요.</string>
+    <string name="geofences_added">퀘스트의 시간이 만료되었습니다.</string>
+    <string name="geofences_removed">GPS가 초기화되었습니다.</string>
 
     <!-- Error strings -->
     <string name="geofence_not_available">Geofence service is not available now</string>

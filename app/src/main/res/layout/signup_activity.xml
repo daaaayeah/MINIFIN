@@ -139,7 +139,7 @@
                         android:textSize="17dp" />
 
                     <LinearLayout
-                        android:layout_width="300dp"
+                        android:layout_width="362dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/agreement"
                         android:orientation="vertical"
@@ -197,8 +197,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="10dp"
-                            android:paddingBottom="10dp"
                             android:paddingRight="15dp"
+                            android:paddingBottom="10dp"
                             android:text="  제 1 조 (목적)
 본 약관은 주식회사 거칠조(이하)가 제공하는 위치기반서비스에 대해 회사와 위치기반서비스를 이용하는 개인위치정보주체(이하)간의 권리·의무 및 책임사항, 기타 필요한 사항 규정을 목적으로 합니다.\n
  제 2 조 (이용약관의 효력 및 변경)

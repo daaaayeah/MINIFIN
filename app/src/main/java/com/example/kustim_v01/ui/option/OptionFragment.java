@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.kustim_v01.R;
+import com.example.kustim_v01.SigninActivity;
 import com.example.kustim_v01.User;
 public class OptionFragment extends Fragment {
 
@@ -31,7 +32,7 @@ public class OptionFragment extends Fragment {
         mypage_name.setText(User.name);
 
 
-        if(User.promise2==true){
+        if(SigninActivity.user.promise2==true){
 
             gitgraph = root.findViewById(R.id.github1);
             gitgraph.setImageResource(R.drawable.github2);

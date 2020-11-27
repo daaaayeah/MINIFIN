@@ -29,7 +29,7 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth mAuth;
     ProgressDialog customProgressDialog;
-
+    public static User user = new User();
     private Button btn_signin;
     private EditText et_id;
     private EditText et_pw;
@@ -119,7 +119,14 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
                                                 } else {
 
                                                     for (QueryDocumentSnapshot document : task.getResult()) {
-                                                        User user = new User();
+
+
+                                                        if (PopupresultActivity.success_promise == true) {
+                                                            db.collection("users").document(user.a).update("promise2", true);
+                                                        }
+
+                                                        user.promise2 = (boolean) document.getData().get("promise2");
+
                                                         user.email = document.getData().get("email").toString();
                                                         user.uid = document.getData().get("uid").toString();
                                                         user.name = document.getData().get("name").toString();
@@ -128,23 +135,18 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
                                                         user.promise = (boolean) document.getData().get("promise");
                                                         user.money = (boolean) document.getData().get("money");
                                                         user.wakeup = (boolean) document.getData().get("wakeup");
-                                                        user.promise2 = (boolean) document.getData().get("promise2");
 
-                                                        if (GeofenceTransitionsJobIntentService.success_promise == true) {
-                                                            db.collection("users").document(user.a).update("promise2", true);
-                                                        }
                                                     }
                                                 }
                                             }
                                         });
 
-                                Toast.makeText(getApplicationContext(), "로그인에 성공하였습니다", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(SigninActivity.this,MainActivity.class);
                                 startActivity(intent);
                             }
                             else {
                                 if (task.getException() != null) {
-                                    Toast.makeText(getApplicationContext(), "형식이 안 맞거나 알 수 없는 오류입니다".toString(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "잘못된 형식입니다".toString(), Toast.LENGTH_SHORT).show();
                                     updateUI(null);
                                 }
                             }

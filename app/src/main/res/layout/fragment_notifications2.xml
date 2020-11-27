@@ -57,7 +57,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="70dp"
+                android:paddingBottom="150dp"
                 android:background="@drawable/main_radius"
                 android:orientation="vertical">
 
@@ -82,7 +82,7 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="5dp"
-                        android:layout_marginBottom="2.5dp"
+                        android:layout_marginBottom="5dp"
                         android:background="@drawable/shadow2"
                         android:gravity="center_vertical"
                         android:paddingLeft="20dp">
@@ -97,10 +97,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
-                            android:text="'이번 주 약속왕이 되어라!'\n 퀘스트를 성공했습니다."
+                            android:text="'이번 주 약속 하나를 달성하세요!'\n 퀘스트를 성공했습니다."
                             android:textColor="@android:color/black"
                             android:textSize="17.5dp" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -112,7 +113,7 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="5dp"
-                        android:layout_marginBottom="2.5dp"
+                        android:layout_marginBottom="5dp"
                         android:background="@drawable/shadow"
                         android:gravity="center_vertical"
                         android:paddingLeft="20dp">
@@ -138,7 +139,7 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="5dp"
-                        android:layout_marginBottom="2.5dp"
+                        android:layout_marginBottom="5dp"
                         android:background="@drawable/shadow"
                         android:gravity="center_vertical"
                         android:paddingLeft="20dp">
@@ -153,7 +154,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
-                            android:text="'이번 주 운동왕은 바로 나!'
+                            android:text="'이번 주 운동왕이 되어보자!'
                                       퀘스트를 성공했습니다."
                             android:textColor="@android:color/black"
                             android:textSize="17.5dp" />

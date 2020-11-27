@@ -47,7 +47,7 @@ public class HomeFragment extends Fragment {
             }
         };
         countDownTimer.start();
-        
+
         return root;
     }
 

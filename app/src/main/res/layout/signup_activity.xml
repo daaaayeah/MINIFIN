@@ -131,7 +131,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="30dp"
                         android:layout_marginTop="45dp"
                         android:layout_marginBottom="10dp"
                         android:text="약관 동의"
@@ -139,7 +139,7 @@
                         android:textSize="17dp" />
 
                     <LinearLayout
-                        android:layout_width="362dp"
+                        android:layout_width="330dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/agreement"
                         android:orientation="vertical"

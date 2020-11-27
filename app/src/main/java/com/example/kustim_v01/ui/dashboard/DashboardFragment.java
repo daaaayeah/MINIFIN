@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kustim_v01.CompletedQuestActivity;
 import com.example.kustim_v01.FirstlogoActivity;
+import com.example.kustim_v01.MoneyDashActivity;
 import com.example.kustim_v01.R;
 import com.example.kustim_v01.SigninActivity;
 import com.example.kustim_v01.SignupActivity;
@@ -33,6 +34,7 @@ import com.google.firebase.firestore.Source;
 public class DashboardFragment extends Fragment {
     Button completed_button;
     Button continue_button;
+    Button money_button;
     TextView dashboard_first;
     TextView dashboard_second;
     TextView dashboard_third;
@@ -65,6 +67,7 @@ public class DashboardFragment extends Fragment {
 
         continue_button = root.findViewById(R.id.continue_button);
         completed_button = root.findViewById(R.id.completed_button);
+        money_button = root.findViewById(R.id.money_button);
 
     if (SigninActivity.user.promise == true & SigninActivity.user.money == false && SigninActivity.user.wakeup == false & SigninActivity.user.promise2 == false) {
             dashboard_first.setText("이번 주 약속 하나를 달성하세요!");
@@ -165,6 +168,17 @@ public class DashboardFragment extends Fragment {
             public void onClick(View v) {
                 if (v.getId() == R.id.completed_button) {
                     Intent intent = new Intent(getActivity(), CompletedQuestActivity.class);
+                    startActivity(intent);
+                }
+            }
+        }));
+
+        Button money_button = root.findViewById(R.id.money_button);
+        money_button.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v.getId() == R.id.money_button) {
+                    Intent intent = new Intent(getActivity(), MoneyDashActivity.class);
                     startActivity(intent);
                 }
             }

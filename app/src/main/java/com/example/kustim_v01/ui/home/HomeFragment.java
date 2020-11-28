@@ -48,6 +48,9 @@ public class HomeFragment extends Fragment {
         };
         countDownTimer.start();
 
+
+
+
         return root;
     }
 
@@ -55,6 +58,8 @@ public class HomeFragment extends Fragment {
         Date date = new Date();
         Calendar calendar = new GregorianCalendar();
         calendar.setTime(date);
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         int c_hour = calendar.get(Calendar.HOUR_OF_DAY);
         int c_min = calendar.get(Calendar.MINUTE);

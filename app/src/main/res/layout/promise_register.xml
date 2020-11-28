@@ -117,7 +117,7 @@
                 app:layout_constraintTop_toTopOf="@+id/Date" />
 
             <EditText
-                android:id="@+id/friendemail"
+                android:id="@+id/friend"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_marginBottom="8dp"

@@ -160,7 +160,7 @@
             android:paddingLeft="40dp">
 
             <Button
-                android:id="@+id/promise_accept5"
+                android:id="@+id/promise5"
                 android:layout_width="110dp"
                 android:layout_height="55dp"
                 android:background="@drawable/radius"

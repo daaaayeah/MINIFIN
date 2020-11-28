@@ -35,6 +35,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -56,6 +57,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -67,6 +70,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+
+import static com.example.kustim_v01.SigninActivity.user;
 
 /**
  * Demonstrates how to create and remove geofences using the GeofencingApi. Uses an IntentService
@@ -80,6 +85,7 @@ import java.util.Map;
 public class GeofenceMainActivity extends AppCompatActivity implements OnCompleteListener<Void>,OnMapReadyCallback{
     Calendar myCalendar = Calendar.getInstance();
     static LatLng place;
+    TextView friend;
     private GoogleMap mMap;
     private Geocoder geocoder;
     private Button button;
@@ -161,6 +167,7 @@ public class GeofenceMainActivity extends AppCompatActivity implements OnComplet
         super.onCreate(savedInstanceState);
         setContentView(R.layout.promise_register);
         editText = (EditText) findViewById(R.id.editText);
+        friend = (EditText) findViewById(R.id.friend);
         button=(Button)findViewById(R.id.button);
 
 
@@ -354,6 +361,31 @@ public class GeofenceMainActivity extends AppCompatActivity implements OnComplet
             return;
         }
         populateGeofenceList();
+
+        final FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        db.collection("users")
+                .whereEqualTo("email", friend.getText().toString())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (!task.isSuccessful()) {
+                            Log.d("No", "Error getting documents: ", task.getException());
+                        } else {
+
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+
+
+                                user.a = document.getData().get("a").toString();
+                                    db.collection("users").document(user.a).update("friendemail", true);
+                            }
+                        }
+                    }
+                });
+
+
+
         Toast.makeText(getApplicationContext(), "성사되었습니다. Quest를 Dashboard에서 확인해주세요!", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

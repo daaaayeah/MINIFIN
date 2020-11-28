@@ -93,6 +93,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                                     user.put("money",false);
                                     user.put("wakeup",false);
                                     user.put("promise2",false);
+                                    user.put("friendemail",false);
                                     db.collection("users")
                                             .add(user)
                                             .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {

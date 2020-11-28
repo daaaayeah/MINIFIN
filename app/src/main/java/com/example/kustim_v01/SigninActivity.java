@@ -36,7 +36,7 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
     private Button btn_signup;
     private CheckBox cb_save;
     private Context mContext;
-
+    static boolean friend2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mAuth = FirebaseAuth.getInstance();
@@ -106,8 +106,8 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             customProgressDialog.dismiss();
                             if (task.isSuccessful()) {
-                                final FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+                                final FirebaseFirestore db = FirebaseFirestore.getInstance();
                                 db.collection("users")
                                         .whereEqualTo("email", email)
                                         .get()
@@ -121,6 +121,7 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
                                                     for (QueryDocumentSnapshot document : task.getResult()) {
 
 
+                                                        user.a = document.getData().get("a").toString();
                                                         if (PopupresultActivity.success_promise == true) {
                                                             db.collection("users").document(user.a).update("promise2", true);
                                                         }
@@ -130,20 +131,27 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
                                                         user.email = document.getData().get("email").toString();
                                                         user.uid = document.getData().get("uid").toString();
                                                         user.name = document.getData().get("name").toString();
-                                                        user.a = document.getData().get("a").toString();
                                                         user.score = document.getData().get("score").toString();
                                                         user.promise = (boolean) document.getData().get("promise");
                                                         user.money = (boolean) document.getData().get("money");
                                                         user.wakeup = (boolean) document.getData().get("wakeup");
+                                                        user.friendemail = (boolean) document.getData().get("friendemail");
 
+                                                        if(user.friendemail==true){
+
+                                                            Intent intent = new Intent(SigninActivity.this,FriendpromiseActivity.class);
+                                                            startActivity(intent);}
+                                                        else{
+                                                            Intent intent = new Intent(SigninActivity.this,MainActivity.class);
+                                                            startActivity(intent);}
                                                     }
                                                 }
                                             }
                                         });
 
-                                Intent intent = new Intent(SigninActivity.this,MainActivity.class);
-                                startActivity(intent);
+
                             }
+
                             else {
                                 if (task.getException() != null) {
                                     Toast.makeText(getApplicationContext(), "잘못된 형식입니다".toString(), Toast.LENGTH_SHORT).show();
@@ -159,11 +167,9 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
     public void updateUI(FirebaseUser account){
 
         if(account != null){
-            Toast.makeText(this,"U Signed In successfully",Toast.LENGTH_LONG).show();
             startActivity(new Intent(this,MainActivity.class));
 
         }else {
-            Toast.makeText(this,"U Didnt signed in",Toast.LENGTH_LONG).show();
         }
     }
 }

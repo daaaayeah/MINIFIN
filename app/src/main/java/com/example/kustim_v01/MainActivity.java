@@ -23,11 +23,12 @@ import com.example.kustim_v01.popup.PopupActivity4;
 import com.example.kustim_v01.popup.PopupActivity5;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import static com.example.kustim_v01.SigninActivity.user;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -41,11 +42,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 //        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-
-
-
-
-
 
 
 

@@ -16,11 +16,12 @@ public class User {
     public static boolean money;
     public static String score;
     public static LatLng place;
+    public static boolean friendemail;
     public User() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public User(boolean promise2,String a,String username, String email,String name, String phone, boolean promise, boolean wakeup,boolean money,String uid) {
+    public User(boolean friendemail,boolean promise2,String a,String username, String email,String name, String phone, boolean promise, boolean wakeup,boolean money,String uid) {
         this.username = username;
         this.email = email;
         this.name = name;
@@ -32,6 +33,7 @@ public class User {
         this.a = a;
         this.promise2 = promise2;
         this.place = place;
+        this.friendemail = friendemail;
     }
 
 }
